@@ -23,7 +23,9 @@ library
   other-modules:
     Repology.Versions.FFI
   -- other-extensions:
-  build-depends:       base ^>=4.13.0.0
+  build-depends:
+    base ^>=4.13.0.0,
+    bytestring -any
   pkgconfig-depends:   libversion
   hs-source-dirs:      src
   default-language:    Haskell2010
