@@ -14,7 +14,10 @@ import           Repology.Versions.FFI          ( c_version_compare2
                                                 )
 import           System.IO.Unsafe               ( unsafePerformIO )
 
-newtype Version = Version String deriving (Eq, Show)
+newtype Version = Version String deriving (Show)
+
+instance Eq Version where
+  v1 == v2 = versionCompare v1 v2 == EQ
 
 instance Ord Version where
   compare = versionCompare
